@@ -8,4 +8,7 @@ class ArtefactosValiosos:
     def __str__(self):
         return 'Nombre: ' + self.nombre + ' Peso: ' + str(self.peso) + ' Precio: ' + str(self.precio) + ' Fecha de caducidad: ' + str(self.fechaCaducidad)
     
-def usarFuerza(m)
+def usarFuerza(mochila, numObjetos):
+    if(len(mochila)>0):
+        if mochila[len(mochila)-1].nombre == "Sable de Luz":
+            
