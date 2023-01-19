@@ -1,5 +1,59 @@
 # Examen_Ordinario_EDA2_Carlota_S-nchez
+***Ejercicio 1***:
 
+Ejercicio:
+```
+class Stormtroopers:
+    def __init__(self, nombre, rango):
+        self.nombre = nombre
+        self.rango = rango
+        print('Creado con éxito')
+    def clasificacion(self):
+        codigoLegion = self.nombre.split("-")[0]
+        print('Codigo Legion: ' + codigoLegion)
+        print('Identificador de Cohoerte: ' + self.nombre.split("-")[1][0])
+        print('Identificador de Siglo: ' + self.nombre.split("-")[1][1])
+        print('Identificador de Escuadra: ' + self.nombre.split("-")[1][2])
+        print('Numero de Trooper: ' + self.nombre.split("-")[1][3])
+
+lista = [Stormtroopers('AK-3654', 7), Stormtroopers('LF-2564', 7), Stormtroopers('TK-8154', 7), Stormtroopers('TL-8654', 7)]
+for stormtrooper in lista:
+    stormtrooper.clasificacion()
+ ```
+ Main:
+ 
+ ```
+ from ej1 import *
+
+if __name__ == '__main__':
+    stormtrooper = Stormtroopers('AK-3654', 7)
+    print(stormtrooper.nombre)
+    print(stormtrooper.rango)
+    stormtrooper.clasificacion()
+    print(stormtrooper.nombre.split("-")[0])
+    print(stormtrooper.nombre.split("-")[1][0])
+    print(stormtrooper.nombre.split("-")[1][1])
+    print(stormtrooper.nombre.split("-")[1][2])
+    print(stormtrooper.nombre.split("-")[1][3])
+```
+
+Test:
+```
+import pytest
+from ej1 import Stormtroopers
+
+def test_stormtrooper():
+    stormtrooper = Stormtroopers('AK-3654', 7)
+    assert stormtrooper.nombre == 'AK-3654'
+    assert stormtrooper.rango == 7
+    stormtrooper.clasificacion()
+    assert stormtrooper.nombre.split("-")[0] == "AK"
+    assert stormtrooper.nombre.split("-")[1][0] == "3"
+    assert stormtrooper.nombre.split("-")[1][1] == "6"
+    assert stormtrooper.nombre.split("-")[1][2] == "5"
+    assert stormtrooper.nombre.split("-")[1][3] == "4"
+```
+    
 ***Ejercicio 7***:
 
 Ejercicio:
