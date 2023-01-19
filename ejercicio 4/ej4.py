@@ -11,4 +11,16 @@ class ArtefactosValiosos:
 def usarFuerza(mochila, numObjetos):
     if(len(mochila)>0):
         if mochila[len(mochila)-1].nombre == "Sable de Luz":
-            
+            print("Se han sacado " + str(numObjetos) + " objetos de la mochila")
+        else:
+            mochila.pop()
+            usarFuerza(mochila, numObjetos+1)
+    else:
+        print("No hay objetos en la mochila")
+
+def main():
+    numObjetos = 0
+    mochiila = [ArtefactosValiosos('Linterna', 500, 20, '05/28/2022'),
+    ArtefactosValiosos('Sable de Luz', 500, 20, '05/28/2022'),
+    ArtefactosValiosos('Esmeralda', 500, 20, '05/28/2022'), ArtefactosValiosos('Diamante', 500, 20, '05/28/2022')]
+    usarFuerza(mochiila, numObjetos)
