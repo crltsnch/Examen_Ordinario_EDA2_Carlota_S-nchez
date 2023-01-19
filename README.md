@@ -108,6 +108,7 @@ def test_stormtrooper_str():
     assert str(stormtrooper) == 'AK-3654 es un Stormtrooper de rango 7'
 ```
 ***EJERCICIO 3***
+
 Ejercicio:
 
 ```
@@ -167,6 +168,81 @@ ArtefactosValiosos('Perla', 50, 500, '09/30/2025')]
     assert lista[0].nombre == 'Esmeralda'
     assert lista[1].nombre == 'Diamante'
 ```
+
+***EJERCICIO 4***
+
+Ejercicio:
+```
+class ArtefactosValiosos:
+    def __init__(self, nombre, peso, precio, fechaCaducidad):
+        self.nombre = nombre
+        self.peso = peso
+        self.precio = precio
+        self.fechaCaducidad = fechaCaducidad
+        print('Se ha creado un artefacto valioso')
+    def __str__(self):
+        return 'Nombre: ' + self.nombre + ' Peso: ' + str(self.peso) + ' Precio: ' + str(self.precio) + ' Fecha de caducidad: ' + str(self.fechaCaducidad)
+    
+def usarFuerza(mochila, numObjetos):
+    if(len(mochila)>0):
+        if mochila[len(mochila)-1].nombre == "Sable de Luz":
+            print("Se han sacado " + str(numObjetos) + " objetos de la mochila")
+        else:
+            mochila.pop()
+            usarFuerza(mochila, numObjetos+1)
+    else:
+        print("No hay objetos en la mochila")
+
+def main():
+    numObjetos = 0
+    mochiila = [ArtefactosValiosos('Linterna', 500, 20, '05/28/2022'),
+    ArtefactosValiosos('Sable de Luz', 500, 20, '05/28/2022'),
+    ArtefactosValiosos('Esmeralda', 500, 20, '05/28/2022'), ArtefactosValiosos('Diamante', 500, 20, '05/28/2022')]
+    usarFuerza(mochiila, numObjetos)
+```
+Main:
+```
+from ej4 import *
+
+if __name__ == '__main__':
+    main()
+```
+
+***EJERCICIO 5***
+
+Ejercicio:
+
+```
+def mochila(n, w, val, weight):
+    if n == 0 or w == 0:
+        return 0
+    if weight[n-1] > w:
+        return mochila(n-1, w, val, weight)
+    else:
+        return max(val[n-1] + mochila(n-1, w-weight[n-1], val, weight), mochila(n-1, w, val, weight))
+
+def main():
+    precio = [103, 60, 70, 5, 15]
+    pesos = [12, 23, 11, 15, 7]
+    peso_maximo = 100
+    n = len(precio)
+    valor_maximo = mochila(n, peso_maximo, precio, pesos)
+    print(valor_maximo)
+```
+
+Main:
+```
+from ej5 import *
+
+if __name__ == '__main__':
+    main()
+```
+
+***EJERCICIO 6***
+
+
+
+
  
 ***EJERCICIO 7***
 
@@ -280,7 +356,7 @@ if __name__ == '__main__':
     print('\nCodificamos el mensaje MOTO: ', codificar('MOTO', raiz))
     print('\nDecodificamos el mensaje de la palabra inicial: ', decodificar(codificar('MOTO', raiz), raiz), '\n')
 ```
-***EJERCICIO 8***:
+***EJERCICIO 8***
 ```
 import networkx as nx
 import random
