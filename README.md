@@ -1,4 +1,6 @@
 # Examen_Ordinario_EDA2_Carlota_S-nchez
+El link a mi repositorio es: https://github.com/crltsnch/Examen_Ordinario_EDA2_Carlota_S-nchez.git
+
 ***EJERCICIO 1***
 
 Ejercicio:
