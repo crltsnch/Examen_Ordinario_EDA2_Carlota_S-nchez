@@ -23,7 +23,14 @@ g.add_node('Corellia')
 g.add_node('Coruscant')
 
 #generamso al menos 4 aristas
-for i in range(4):
-    other_node = random.coice(list(g.nodes()))   #elegimos al azor otro nodo (planeta)
-    while other_node == node:
-        other_node = random.choice(list(g.nodes()))
+for node in g.nodes():
+    for i in range(4):
+        other_node = random.choice(list(g.nodes()))   #elegimos al azor otro nodo (planeta)
+        while other_node == node:     #si es el mismo, volvemos a elegir
+            other_node = random.choice(list(g.nodes()))
+        weight = random.randint(1, 10)   #elegimos un peso al azar
+        g.add_edge(node, other_node, weight=weight)   #agregamos la arista entre el nodo actual y el nodo elegido
+
+t = nx.minimum_spanning_tree(g)   #obtenemos el arbol de expansion minima
+
+#arbol de expansion minima
