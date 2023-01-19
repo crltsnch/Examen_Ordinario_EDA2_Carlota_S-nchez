@@ -42,7 +42,27 @@ def crear_arbol(simbolo, freq):
 
 def buscar(raiz, clave):
     p = 0
-    if p is not None:
+
+    if raiz is not None:
         if raiz.simbolo == clave:
             p = raiz
+            return p
         elif p is None:
+            p = buscar(raiz.izq, clave)
+        elif p is None:
+            p = buscar(raiz.der, clave)
+
+    return p
+
+def codificar(raiz, mensaje):
+    codigo = []
+    mensaje = mensaje[::-1] 
+    for m in mensaje:
+        nodo = buscar(raiz, m)
+        while nodo.padre is not None:
+            if nodo.padre.izq == nodo:
+                codigo.append('0')
+            else:
+                codigo.append('1')
+            nodo = nodo.padre
+        
