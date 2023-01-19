@@ -14,4 +14,3 @@ class Stormtroopers:
 lista = [Stormtroopers('AK-3654', 7), Stormtroopers('LF-2564', 7), Stormtroopers('TK-8154', 7), Stormtroopers('TL-8654', 7)]
 for stormtrooper in lista:
     stormtrooper.clasificacion()
-    
