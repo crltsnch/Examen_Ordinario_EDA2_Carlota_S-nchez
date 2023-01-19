@@ -15,6 +15,3 @@ def main():
     n = len(precio)
     valor_maximo = mochila(n, peso_maximo, precio, pesos)
     print(valor_maximo)
-
-if __name__ == '__main__':
-    main()

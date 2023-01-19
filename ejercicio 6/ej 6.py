@@ -52,3 +52,17 @@ print('Mision desalto')
 print(misionDesalto)
 print('Mision Exploracion')
 print(misionExploracion)
+
+mExploracion = []
+mExterminacion = []
+for i in hashTresDigitos.keys():
+    for j in hashTresDigitos.get(i).keys():
+        if j == 'CT':
+            mExploracion.append(hashTresDigitos[i][j])
+        if j == 'FN':
+            mExterminacion.append(hashTresDigitos[i][j])
+
+print('Exploracion')
+print(mExploracion)
+print('Exterminacion')
+print(mExterminacion)
