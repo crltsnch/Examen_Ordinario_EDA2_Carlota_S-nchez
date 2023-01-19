@@ -14,3 +14,15 @@ class Stormtrooper:
     def __str__(self):
         return "Nombre: " + self.nombre + " Rango: " + str(self.rango)
 
+#Deberá generar 2000 Stormtrooper siguiendo el formato de la imagen del primer ejecicio contemplando las siguientes legiones FL, TF, TK, CT, FN, FO y los dígitos generados de manera aleatoria;
+listaLegiones = ['FL', 'TF', 'TK', 'CT', 'FN', 'FQ']
+for i in range(2000):
+    numRandom = random.randint(0, 5)
+    listaNums = []
+    for i in range(4):
+        listaNums.append(random.randint(0, 9))
+
+    nums = ''.join(listaNums)
+    codLegion = listaLegiones[numRandom]
+    Stormtrooper = Stormtrooper(codLegion + '-' + nums, 7)
+    print(Stormtrooper)
