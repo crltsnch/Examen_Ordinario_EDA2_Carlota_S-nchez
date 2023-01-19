@@ -57,6 +57,7 @@ def buscar(raiz, clave):
 def codificar(raiz, mensaje):
     codigo = []
     mensaje = mensaje[::-1] 
+
     for m in mensaje:
         nodo = buscar(raiz, m)
         while nodo.padre is not None:

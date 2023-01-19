@@ -33,4 +33,15 @@ for node in g.nodes():
 
 t = nx.minimum_spanning_tree(g)   #obtenemos el arbol de expansion minima
 
-#arbol de expansion minima
+#distancias
+distance1 = nx.shortest_path_length(t, source = 'Tatooine', target='Dagobah', weight='weight')   #obtenemos la distancia entre Tatooine y Dagobah
+distance2 = nx.shortest_path_length(t, source = 'Alderaan', target='Endor', weight='weight')
+distance3 = nx.shortest_path_length(t, source = 'Hoth', target='Tatooine', weight='weight')
+
+print(distance1)
+print(distance2)
+print(distance3)
+
+#determinamos todos los planetas a los que se puede llegar desde Tatooine
+neighbors =list(t.neighbors('Tatooine'))   #obtenemos los vecinos de Tatooine
+print('Los planetas a los que se puede llegar desde Tatooine son: ', neighbors)
