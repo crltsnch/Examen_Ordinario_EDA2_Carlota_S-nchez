@@ -65,4 +65,14 @@ def codificar(raiz, mensaje):
             else:
                 codigo.append('1')
             nodo = nodo.padre
+        codigo = codigo[::-1]
+        return ''.join(codigo)
+
+def decodificar(raiz, codigo):
+    mensaje = []
+    nodo = raiz
+    for c in codigo:
+        if nodo.der in None:
+            mensaje.append(nodo.simbolo)
+            nodo = raiz
         
