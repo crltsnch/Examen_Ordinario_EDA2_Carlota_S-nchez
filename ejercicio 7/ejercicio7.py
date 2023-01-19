@@ -21,11 +21,11 @@ def insertar_nodo(lista_nodos, nodo):
 
     return lista_nodos
 
-def crear_arbol(simbolo, freq):
+def crear_arbol(simbolos, frecuencias):
     nodos = []
 
-    for i in range(len(simbolo)):
-        nodos.append(NodoArbol(simbolo[i], freq[i]))
+    for i in range(len(simbolos)):
+        nodos.append(NodoArbol(simbolos[i], frecuencias[i]))
     nodos = ordenar_nodos(nodos)
 
     while len(nodos) > 1:
