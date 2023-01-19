@@ -4,7 +4,7 @@
 
 Ejercicio:
 
-'''
+```
 class NodoArbol:
     def __init__(self, simbolo, freq):
         self.simbolo = simbolo
@@ -92,9 +92,10 @@ def decodificar(raiz, codigo):
     mensaje = ''.join(mensaje)
 
     return mensaje
-'''
+```
+
 Main:
-'''
+```
 from ejercicio7 import *
 if __name__ == '__main__':
     simbolos = ['A', 'F', '1', '3', '0', 'M', 'T']
@@ -110,5 +111,4 @@ if __name__ == '__main__':
     print('T: ', codificar('T', raiz))
     print('\nCodificamos el mensaje MOTO: ', codificar('MOTO', raiz))
     print('\nDecodificamos el mensaje de la palabra inicial: ', decodificar(codificar('MOTO', raiz), raiz), '\n')
-    
-'''
+```
