@@ -12,8 +12,13 @@ class ArtefactosValiosos:
 def sortByDate(elem):
     return datetime.strptime(elem.fechaCaducidad, '%d/%m/%Y')
 
-lsita = [ArtefactosValiosos('Diamante', 50, 500, '08/31/2024'),
+lista = [ArtefactosValiosos('Diamante', 50, 500, '08/31/2024'),
 ArtefactosValiosos('Esmeralda', 50, 500, '07/28/2023'),
 ArtefactosValiosos('Perla', 50, 500, '09/30/2025')]
+lista.sort(key=sortByDate)
+for stormtrooper in lista:
+    print(stormtrooper)
 
-
+print('Precio cambiado')
+lista[0].precio = 400
+print(lista[0]) 
